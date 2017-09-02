@@ -2,8 +2,8 @@
 Configuring linux web servers to secure and set up a Linux server. The instructions are written to run an app called Catalog, live on a secure web server using an Amazon Lightsail.
 
 # Server Details
- IP address : 13.126.183.240
- SSH port : 2200
+ IP address : 13.126.183.240 <br>
+ SSH port : 2200 <br>
  URLs : http://13.126.183.240/<br>
         http://ec2-13-126-183-240.ap-south-1.compute.amazonaws.com/
         
@@ -72,7 +72,7 @@ As root, type `sudo adduser grader`. Then follow prompts to add a password and f
 ## Give grader sudo permission
 * As the root user, type `sudo visudo`
 * Add the following line below `root ALL=(ALL:ALL) ALL`: <br>
-  grader ALL=(ALL:ALL) ALL
+  `grader ALL=(ALL:ALL) ALL`
 
 ##  Set-up Key-based Authentication
 * Run ssh-keygen on the local machine and create a key for the user grader.
@@ -88,7 +88,7 @@ As root, type `sudo adduser grader`. Then follow prompts to add a password and f
 * Restart the ssh service <br> 
 `sudo service ssh restart`
 * Log in as the grader using the following command:<br>
-  ssh -i ~/.ssh/KEYFILE -p 2200 grader@XX.XX.XX.XX
+  `ssh -i ~/.ssh/KEYFILE -p 2200 grader@XX.XX.XX.XX`
   
 ## Disable remote login of root user
 * On the server, logged in as root, edit the sshd_config file <br>
@@ -105,8 +105,7 @@ As root, type `sudo adduser grader`. Then follow prompts to add a password and f
 ##  Install and configure Apache 
 * Install Apache 
 `sudo apt-get install apache2` <br>
-- Confirm successful installation by visiting http://13.126.183.240. It should say "It Works" and display other Apache information on the page.
-<br>
+* Confirm successful installation by visiting http://13.126.183.240. It should say "It Works" and display other Apache information on the page.
 * Install Python mod_wsgi `sudo apt-get install libapache2-mod-wsgi` 
 * Make sure mod_wsgi is enabled by running `sudo a2enmod wsgi`.
 
@@ -149,7 +148,6 @@ ALTER USER catalog CREATEDB;
 `RedirectMatch 404 /\.git`
 
 ## Create a virtual environment and install dependencies
-* 
 ```
 sudo apt-get install python-pip
 sudo pip install virtualenv
@@ -239,9 +237,8 @@ Authenticate login through Google:
 - Use the full path to client_secrets.json in the __init__.py file. 
 
 ## Steps to display the site
-* Delete any previous database.
 * Activate the virtualenv by running . venv/bin/activate.
-* Run python items.py
+* Run `python items.py`
 * Deactivate the virtualenv.
 * Add EC2 URL (without the http://) to 'hosts' file <br>
 `sudo nano /etc/hosts` 
@@ -270,6 +267,7 @@ Authenticate login through Google:
 - SQLAlchemy
 - Flask
 - Psycopg2
+- Glances
 
 # Resources
 * Udacity course: [Configuring Linux Web Servers](https://www.udacity.com/course/configuring-linux-web-servers--ud299)
