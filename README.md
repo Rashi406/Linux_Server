@@ -5,7 +5,8 @@ Configuring linux web servers to secure and set up a Linux server. The instructi
  IP address : 13.126.183.240 <br>
  SSH port : 2200 <br>
  URLs : http://13.126.183.240/<br>
-        http://ec2-13-126-183-240.ap-south-1.compute.amazonaws.com/
+        http://ec2-13-126-183-240.ap-south-1.compute.amazonaws.com/<br>
+#### Note that since I have now graduated, the original server has been disabled. You might find something else there now.
         
 # Configuration
 
